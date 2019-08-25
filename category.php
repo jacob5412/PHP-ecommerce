@@ -90,7 +90,7 @@ $id_category =$_GET['id'];
                     <div class="card-image">
                         <a href="product.php?id=<?= $id_product; ?>">
                           <img src="products/<?= $thumbnail_product; ?>"></a>
-                        <span class="card-title grey-text"><?= $name_product; ?></span>
+                        <span class="card-title blue-text"><?= $name_product; ?></span>
                         <a href="product.php?id=<?= $id_product; ?>" class="btn-floating halfway-fab waves-effect waves-light right"><i class="material-icons">add</i></a>
                       </div>
                       <div class="card-action">
