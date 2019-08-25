@@ -377,8 +377,8 @@
 			var id = this.el.attr('id');
 			this.el.empty();
 			if (typeof this.cursor !== 'undefined') {
-        this.cursor.remove();
-      }
+				this.cursor.remove();
+			}
 			this.strPos = 0;
 			this.arrayPos = 0;
 			this.curLoop = 0;

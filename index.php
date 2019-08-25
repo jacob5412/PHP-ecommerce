@@ -3,11 +3,11 @@
 session_start();
 
 if (!isset($_SESSION['logged_in'])) {
-  $nav ='includes/nav.php';
+    $nav ='includes/nav.php';
 }
 else {
-  $nav ='includes/navconnected.php';
-  $idsess = $_SESSION['id'];
+    $nav ='includes/navconnected.php';
+    $idsess = $_SESSION['id'];
 }
 
 
@@ -53,32 +53,32 @@ require $nav; ?>
 </style>
 
 <div class="container-fluid home" id="top">
-  <div class="container search">
-    <nav class="animated slideInUp wow">
-      <div class="nav-wrapper">
-        <form method="GET" action="search.php">
-          <div class="input-field">
-                <input id="search" class="searching" type="search" name='searched' required>
-            <label for="search"><i class="material-icons">search</i></label>
-          </div>
+    <div class="container search">
+        <nav class="animated slideInUp wow">
+            <div class="nav-wrapper">
+                <form method="GET" action="search.php">
+                    <div class="input-field">
+                        <input id="search" class="searching" type="search" name='searched' required>
+                        <label for="search"><i class="material-icons">search</i></label>
+                    </div>
 
-          <div class="center-align">
-            <button type="submit" name="search" class="blue waves-light miaw waves-effect btn hide">Search</button>
-          </div>
-        </form>
-      </div>
-    </nav>
-  </div>
+                    <div class="center-align">
+                        <button type="submit" name="search" class="blue waves-light miaw waves-effect btn hide">Search</button>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
 </div>
 
 <div class="container most">
-  <div class="row">
-    <?php
+    <div class="row">
+        <?php
 
-     include 'db.php';
+        include 'db.php';
 
-     // selecting product available in largest quantity
-    $queryfirst = "SELECT
+        // selecting product available in largest quantity
+        $queryfirst = "SELECT
     product.id as 'id',
     product.name as 'name',
     product.price as 'price',
@@ -91,61 +91,61 @@ require $nav; ?>
     FROM product, command
     WHERE product.id = command.id_product AND command.statut = 'paid'
     GROUP BY product.id
-    ORDER BY SUM(command.quantity) DESC LIMIT 3";
-    $resultfirst = $connection->query($queryfirst);
-    if ($resultfirst->num_rows > 0) {
-      // output data of each row
-      while($rowfirst = $resultfirst->fetch_assoc()) {
+    ORDER BY SUM(command.quantity) DESC LIMIT 6";
+        $resultfirst = $connection->query($queryfirst);
+        if ($resultfirst->num_rows > 0) {
+            // output data of each row
+            while($rowfirst = $resultfirst->fetch_assoc()) {
 
-            $id_best = $rowfirst['id'];
-            $name_best = $rowfirst['name'];
-            $price_best = $rowfirst['price'];
-            $thumbnail_best = $rowfirst['thumbnail'];
-            $totalsold = $rowfirst['total'];
+                $id_best = $rowfirst['id'];
+                $name_best = $rowfirst['name'];
+                $price_best = $rowfirst['price'];
+                $thumbnail_best = $rowfirst['thumbnail'];
+                $totalsold = $rowfirst['total'];
 
-            ?>
+                ?>
 
-            <div class="col s12 m4">
-              <div class="card hoverable animated slideInUp wow">
-                <div class="card-image">
-                  <a href="product.php?id=<?= $id_best;  ?>"><img src="products/<?= $thumbnail_best; ?>"></a>
-                  <span class="card-title blue-text"><?= $name_best; ?></span>
-                  <a href="product.php?id=<?= $id_best; ?>" class="btn-floating blue halfway-fab waves-effect waves-light right"><i class="material-icons">add</i></a>
-                </div>
-                  <div class="card-content">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col s6">
-                          <p class="white-text"><i class="left fa fa-dollar"></i> <?= $price_best; ?></p>
+                <div class="col s12 m4">
+                    <div class="card hoverable animated slideInUp wow">
+                        <div class="card-image">
+                            <a href="product.php?id=<?= $id_best;  ?>"><img src="products/<?= $thumbnail_best; ?>"></a>
+                            <span class="card-title blue-text"><?= $name_best; ?></span>
+                            <a href="product.php?id=<?= $id_best; ?>" class="btn-floating blue halfway-fab waves-effect waves-light right"><i class="material-icons">add</i></a>
                         </div>
-                        <div class="col s6">
-                          <p class="white-text"><i class="left fa fa-shopping-basket"></i> <?= $totalsold; ?></p>
+                        <div class="card-content">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col s6">
+                                        <p class="white-text"><i class="left fa fa-dollar"></i> <?= $price_best; ?></p>
+                                    </div>
+                                    <div class="col s6">
+                                        <p class="white-text"><i class="left fa fa-shopping-basket"></i> <?= $totalsold; ?></p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                      </div>
+
                     </div>
-
-                  </div>
-
                 </div>
-              </div>
-              <?php }} ?>
+            <?php }} ?>
 
 
-            </div>
-          </div>
+    </div>
+</div>
 
-          <div class="container-fluid center-align categories">
-            <a href="#category" class="button-rounded btn-large waves-effect waves-light">Categories</a>
-            <div class="container" id="category">
-              <div class="row">
-                <?php
+<div class="container-fluid center-align categories">
+    <a href="#category" class="button-rounded btn-large waves-effect waves-light">Categories</a>
+    <div class="container" id="category">
+        <div class="row">
+            <?php
 
-                //get categories
-                $querycategory = "SELECT id, name, icon  FROM category";
-                $total = $connection->query($querycategory);
-                if ($total->num_rows > 0) {
-                  // output data of each row
-                  while($rowcategory = $total->fetch_assoc()) {
+            //get categories
+            $querycategory = "SELECT id, name, icon  FROM category";
+            $total = $connection->query($querycategory);
+            if ($total->num_rows > 0) {
+                // output data of each row
+                while($rowcategory = $total->fetch_assoc()) {
                     $id_category = $rowcategory['id'];
                     $name_category = $rowcategory['name'];
                     $icon_category = $rowcategory['icon'];
@@ -153,77 +153,79 @@ require $nav; ?>
                     ?>
 
                     <div class="col s12 m4">
-                      <div class="card hoverable animated slideInUp wow">
-                        <div class="card-image">
-                          <a href="category.php?id=<?= $id_category; ?>"><img src="src/img/<?= $icon_category; ?>.png" alt=""></a>
-                          <span class="card-title black-text"><?= $name_category; ?></span>
+                        <div class="card hoverable animated slideInUp wow">
+                            <div class="card-image">
+                                <a href="category.php?id=<?= $id_category; ?>"><img src="src/img/<?= $icon_category; ?>.png" alt=""></a>
+                                <span class="card-title black-text"><?= $name_category; ?></span>
+                            </div>
                         </div>
-                      </div>
                     </div>
 
-                    <?php }} ?>
-                  </div>
-                </div>
-              </div>
+                <?php }} ?>
+        </div>
+    </div>
+</div>
 
 
-              <div class="container-fluid about" id="about">
-                <div class="container">
-                  <div class="row">
-                    <div class="col s12 m6">
-                      <div class="card animated slideInUp wow">
-                        <div class="card-image">
-                          <img src="src/img/about.jpg" alt="">
-                        </div>
-                      </div>
+<div class="container-fluid about" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card animated slideInUp wow">
+                    <div class="card-image">
+                        <img src="src/img/about.jpg" alt="">
                     </div>
+                </div>
+            </div>
 
-                    <div class="col s12 m6">
-                      <h3 class="animated slideInUp wow">About Us</h3>
-                      <div class="divider animated slideInUp wow"></div>
-                      <p class="animated slideInUp wow">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.</p>
-                      </div>
+            <div class="col s12 m6">
+                <h3 class="animated slideInUp wow">About Us</h3>
+                <div class="divider animated slideInUp wow"></div>
+                <p class="animated slideInUp wow">This project aims to implement an e-commerce website which enables
+                    stores to migrate online. We are making use of PHP and MySQL based dynamically generated webpages
+                    to allow purchasing of items. We are going to implement a cart system to allow customers to store
+                    their items. We are also going to implement an authentication system, to differentiate between
+                    regular and logged in customers, by making use of MySQL database. The users are handled using
+                    PHP sessions to allow them to make changes to the cart. These changes are stored as session variables
+                    so that the user can come back and restore his previous session.  </p>
+            </div>
 
-                    </div>
-                  </div>
+        </div>
+    </div>
+</div>
+
+<div class="container contact" id="contact">
+    <div class="row">
+        <form class="col s12 animated slideInUp wow">
+            <h3 class="animated slideInUp wow">Contact Us</h3>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">Full Name</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate">
+                    <label for="email" data-error="wrong" data-success="right">Email</label>
                 </div>
 
-                <div class="container contact" id="contact">
-                  <div class="row">
-                    <form class="col s12 animated slideInUp wow">
-                      <div class="row">
-                        <div class="input-field col s12 m6">
-                          <i class="material-icons prefix">account_circle</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Full Name</label>
-                        </div>
-                        <div class="input-field col s12 m6">
-                          <i class="material-icons prefix">email</i>
-                          <input id="email" type="email" class="validate">
-                          <label for="email" data-error="wrong" data-success="right">Email</label>
-                        </div>
 
 
-
-                        <div class="input-field col s12 ">
-                          <i class="material-icons prefix">message</i>
-                          <textarea id="icon_prefix2" class="materialize-textarea" type="text" name="message" rows="4"" style="resize: vertical;min-height: 8rem;" required></textarea>
-                          <label for="icon_prefix2">Your message</label>
-                        </div>
-
-                        <div class="center-align">
-                          <button type="submit" name="contact" class="button-rounded btn-large waves-effect waves-light">Submit</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+                <div class="input-field col s12 ">
+                    <i class="material-icons prefix">message</i>
+                    <textarea id="icon_prefix2" class="materialize-textarea" type="text" name="message" rows="4"" style="resize: vertical;min-height: 8rem;" required></textarea>
+                    <label for="icon_prefix2">Your message</label>
                 </div>
 
-                <?php
-                require 'includes/secondfooter.php';
-                require 'includes/footer.php'; ?>
+                <div class="center-align">
+                    <button type="submit" name="contact" class="button-rounded btn-large waves-effect waves-light">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<?php
+require 'includes/secondfooter.php';
+require 'includes/footer.php'; ?>
