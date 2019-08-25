@@ -68,7 +68,7 @@ else {
       </tbody>
     </table>
     <div class="right-align">
-      <p>Thank you for trusting us © Smartshop Inc <?= date('Y'); ?></p>
+      <p>Thank you for trusting us © E-Commerce Inc <?= date('Y'); ?></p>
     </div>
 
     <form method="post">

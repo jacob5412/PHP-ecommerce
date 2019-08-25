@@ -14,7 +14,7 @@ if ($_SESSION['role'] !== 'admin') {
       <nav>
         <div class="nav-wrapper">
           <div class="col s12">
-            <a href="../index" class="breadcrumb">Smartshop</a>
+            <a href="../index" class="breadcrumb">E-Commerce</a>
             <a href="index" class="breadcrumb">Dashboard</a>
           </div>
         </div>
