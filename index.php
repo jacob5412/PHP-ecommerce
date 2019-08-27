@@ -19,6 +19,7 @@ require $nav; ?>
         /*the container must be positioned relative:*/
         position: relative;
         display: block;
+
     }
     .autocomplete-items {
         color: #26a69a;
@@ -182,7 +183,7 @@ require $nav; ?>
                 <h3 class="animated slideInUp wow">About Us</h3>
                 <div class="divider animated slideInUp wow"></div>
                 <p class="animated slideInUp wow">This project aims to implement an e-commerce website which enables
-                    stores to migrate online. We are making use of PHP and MySQL based dynamically generated webpages
+                    stores to migrate online. We are making use of PHP and MySQL based dynamically generated web pages
                     to allow purchasing of items. We are going to implement a cart system to allow customers to store
                     their items. We are also going to implement an authentication system, to differentiate between
                     regular and logged in customers, by making use of MySQL database. The users are handled using
