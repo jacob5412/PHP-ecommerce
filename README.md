@@ -11,7 +11,7 @@ password: 123456
 email: venkat@gmail.com<br>
 password: 123456
 
-<h5>Database Configuration</h5> 
+<h4>Database Configuration</h4> 
 Host: localhost<br>
 User: root<br>
 Password: MyNewPass<br>
