@@ -8,8 +8,8 @@ password: 123456
 
 <h4>  Some users </h4> 
 
-email: anas@anas.com<br>
-password : anas
+email: venkat@gmail.com<br>
+password: 123456
 
 <h5>Database Configuration</h5> 
 Host: localhost<br>
