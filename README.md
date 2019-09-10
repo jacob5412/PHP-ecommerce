@@ -1,14 +1,18 @@
 # PHP-ecommerce
 An e-commerce php/mysql website built from scratch to get started with as a starter template
 
-<h5> Super admin </h5> 
+<h4> Super admin </h4> 
 
-email : ismailghallou@hotmail.com<br>
-password : ismail
+email: kapsjacob@gmail.com<br>
+password: 123456
 
-<h5>  some users </h5> 
+<h4>  Some users </h4> 
 
-email : anas@anas.com<br>
+email: anas@anas.com<br>
 password : anas
 
-<h5>For wamp users, please add "root" as user of the db.</h5> 
+<h5>Database Configuration</h5> 
+Host: localhost<br>
+User: root<br>
+Password: MyNewPass<br>
+Name: ecommerce

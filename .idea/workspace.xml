@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2aa21cdc-3588-45c0-8c8d-54192c866ca4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/deleteorder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/addp.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/addp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/allusers.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/allusers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/deleteuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/deleteuser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editprofile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/infoproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/infoproduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/stats.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/stats.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/details.php" beforeDir="false" afterPath="$PROJECT_DIR$/details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/editprofile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final.php" beforeDir="false" afterPath="$PROJECT_DIR$/final.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/loginconfirmation.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/loginconfirmation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/navconnected.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navconnected.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sign.php" beforeDir="false" afterPath="$PROJECT_DIR$/sign.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +59,9 @@
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/js" />
       <recent name="$PROJECT_DIR$/src" />
@@ -84,6 +106,8 @@
       <workItem from="1566800095750" duration="382000" />
       <workItem from="1566832033435" duration="591000" />
       <workItem from="1567778817029" duration="385000" />
+      <workItem from="1568029458688" duration="3064000" />
+      <workItem from="1568099445072" duration="3449000" />
     </task>
     <servers />
   </component>

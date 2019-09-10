@@ -56,7 +56,7 @@ else {
                $newemail = $_POST['email'];
                $newpassword = md5($_POST['password']);
 
-              include '../db.php';
+              include 'db.php';
               // update info on users Toble
               $queryupdate = "UPDATE users SET email ='$newemail', password ='$newpassword' WHERE id='$sessid'";
               $result = $connection->query($queryupdate);
