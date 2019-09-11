@@ -40,18 +40,17 @@ require $nav; ?>
         <tbody>
         <?php
         include 'db.php';
-
-        //get users
-        $queryuser = "SELECT command.id as id, name, quantity, dat, statut FROM command, product WHERE product.id = command.id_product and id_user=".$_SESSION['id'];
-        $resultuser = $connection->query($queryuser);
-        if ($resultuser->num_rows > 0) {
+        //get orders
+        $queryorder = "SELECT command.id as id, name, quantity, dat, statut FROM command, product WHERE product.id = command.id_product and id_user=".$_SESSION['id'];
+        $resultorder = $connection->query($queryorder);
+        if ($resultorder->num_rows > 0) {
             // output data of each row
-            while($rowuser = $resultuser->fetch_assoc()) {
-                $id = $rowuser['id'];
-                $productname = $rowuser['name'];
-                $quantity = $rowuser['quantity'];
-                $dat = $rowuser['dat'];
-                $statu = $rowuser['statut'];
+            while($roworder = $resultorder->fetch_assoc()) {
+                $id = $roworder['id'];
+                $productname = $roworder['name'];
+                $quantity = $roworder['quantity'];
+                $dat = $roworder['dat'];
+                $statu = $roworder['statut'];
                 ?>
                 <tr>
                     <td><?= $productname; ?></td>
@@ -62,6 +61,11 @@ require $nav; ?>
             <?php }}  ?>
         </tbody>
     </table>
+    <div class="center-align">
+        <br>
+        <a href="downloadorder.php?id=<?= $_SESSION['id']; ?>"><button type="submit" name="buy" class="btn-large meh button-rounded waves-effect waves-light ">Download</button></a>
+        <br><br>
+    </div>
 </div>
 
 <?php require 'includes/footer.php'; ?>
