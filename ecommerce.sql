@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
 --
--- Client :  127.0.0.1
--- Généré le :  Lun 20 Février 2017 à 11:57
--- Version du serveur :  10.1.13-MariaDB
--- Version de PHP :  5.6.21
+-- Host: localhost
+-- Generation Time: Sep 10, 2019 at 08:35 AM
+-- Server version: 8.0.17
+-- PHP Version: 7.1.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `ecommerce`
+-- Database: `ecommerce`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ads`
+-- Table structure for table `ads`
 --
 
 CREATE TABLE `ads` (
@@ -36,7 +38,7 @@ CREATE TABLE `ads` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -46,7 +48,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `icon`) VALUES
@@ -60,7 +62,7 @@ INSERT INTO `category` (`id`, `name`, `icon`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `command`
+-- Table structure for table `command`
 --
 
 CREATE TABLE `command` (
@@ -73,7 +75,7 @@ CREATE TABLE `command` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `command`
+-- Dumping data for table `command`
 --
 
 INSERT INTO `command` (`id`, `id_product`, `quantity`, `dat`, `statut`, `id_user`) VALUES
@@ -119,12 +121,13 @@ INSERT INTO `command` (`id`, `id_product`, `quantity`, `dat`, `statut`, `id_user
 (119, 9, 1, '2017-02-19 22:29:15', 'paid', 8),
 (120, 13, 1, '2017-02-19 22:29:15', 'paid', 8),
 (121, 14, 1, '2017-02-19 22:45:27', 'paid', 8),
-(125, 13, 2, '2017-02-20 10:49:00', 'paid', 8);
+(125, 13, 2, '2017-02-20 10:49:00', 'paid', 8),
+(128, 16, 1, '2019-09-10 13:59:10', 'paid', 8);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `details_command`
+-- Table structure for table `details_command`
 --
 
 CREATE TABLE `details_command` (
@@ -142,7 +145,7 @@ CREATE TABLE `details_command` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `details_command`
+-- Dumping data for table `details_command`
 --
 
 INSERT INTO `details_command` (`id`, `product`, `quantity`, `price`, `id_command`, `id_user`, `user`, `address`, `country`, `city`, `statut`) VALUES
@@ -174,12 +177,13 @@ INSERT INTO `details_command` (`id`, `product`, `quantity`, `price`, `id_command
 (28, 'Gopro Hero 5', 1, 450, 119, 8, 'anas mazouni', 'N 20 Lot El dunno Cairo', 'Algeria', 'Cairo', 'done'),
 (29, 'Amazon Echo', 1, 179, 120, 8, 'anas mazouni', 'N 20 Lot El dunno Cairo', 'Algeria', 'Cairo', 'done'),
 (30, 'Apple Watch', 1, 349, 121, 8, 'anas mazouni', 'N 20 Lot El dunno Cairo', 'Morocco', 'Cairo', 'done'),
-(31, 'Amazon Echo', 2, 358, 125, 8, 'anas mazouni', 'N 20 Lot El dunno Cairo', 'Egypt', 'Cairo', 'done');
+(31, 'Amazon Echo', 2, 358, 125, 8, 'anas mazouni', 'N 20 Lot El dunno Cairo', 'Egypt', 'Cairo', 'done'),
+(32, 'Canon EOS 7D', 1, 889, 128, 8, 'Venkat A', 'Place in Bangalore', 'India', 'Bangalore', 'done');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `pictures`
+-- Table structure for table `pictures`
 --
 
 CREATE TABLE `pictures` (
@@ -189,7 +193,7 @@ CREATE TABLE `pictures` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `pictures`
+-- Dumping data for table `pictures`
 --
 
 INSERT INTO `pictures` (`id`, `picture`, `id_product`) VALUES
@@ -227,7 +231,7 @@ INSERT INTO `pictures` (`id`, `picture`, `id_product`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -242,7 +246,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `id_category`, `name`, `description`, `price`, `id_picture`, `thumbnail`, `promo`) VALUES
@@ -260,7 +264,7 @@ INSERT INTO `product` (`id`, `id_category`, `name`, `description`, `price`, `id_
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -276,103 +280,111 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `firstname`, `lastname`, `password`, `address`, `city`, `country`, `role`) VALUES
-(5, 'ismailghallou@hotmail.com', 'Ismail', 'Ghallou', 'f3b32717d5322d7ba7c505c230785468', 'N 23 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'admin'),
+(5, 'kapsjacob@gmail.com', 'Jacob', 'John', 'e10adc3949ba59abbe56e057f20f883e', 'VIT', 'Vellore', 'India', 'admin'),
 (6, 'ismail16smakosh23@gmail.com', 'ahmed', 'ali', '9193ce3b31332b03f7d8af056c692b84', 'N 26 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client'),
 (7, 'ismail@hotmail.com', 'omar', 'ahmed', 'd4466cce49457cfea18222f5a7cd3573', 'N 22 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client'),
-(8, 'anas@anas.com', 'anas', 'mazouni', '76eb649c047cbecad7c36e71374bc9a5', 'N 20 Lot El dunno Cairo', 'Cairo', 'Morocco', 'client'),
+(8, 'venkat@gmail.com', 'Venkat', 'A', 'e10adc3949ba59abbe56e057f20f883e', 'Place in Bangalore', 'Bangalore', 'India', 'client'),
 (9, 'badris@hotmail.com', 'abdo', 'badris', '267c88a9c130619b5e8fe370c0ae7730', 'N 48 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client'),
 (10, 'mus@hotmail.com', 'mus', 'ghallou', 'd62ec24d065e424dd816ce7828f62584', 'N 102 Cairo', 'Cairo', 'Egypt', 'client'),
 (11, 'ali@ali.com', 'ali', 'ghallou', '86318e52f5ed4801abe1d13d509443de', 'N 23 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client');
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `ads`
+-- Indexes for table `ads`
 --
 ALTER TABLE `ads`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `command`
+-- Indexes for table `command`
 --
 ALTER TABLE `command`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `details_command`
+-- Indexes for table `details_command`
 --
 ALTER TABLE `details_command`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `pictures`
+-- Indexes for table `pictures`
 --
 ALTER TABLE `pictures`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `ads`
+-- AUTO_INCREMENT for table `ads`
 --
 ALTER TABLE `ads`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT pour la table `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT pour la table `command`
+-- AUTO_INCREMENT for table `command`
 --
 ALTER TABLE `command`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+
 --
--- AUTO_INCREMENT pour la table `details_command`
+-- AUTO_INCREMENT for table `details_command`
 --
 ALTER TABLE `details_command`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
 --
--- AUTO_INCREMENT pour la table `pictures`
+-- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
 --
--- AUTO_INCREMENT pour la table `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
