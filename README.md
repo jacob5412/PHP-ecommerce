@@ -11,7 +11,7 @@ password: 123456
 email: venkat@gmail.com<br>
 password: 123456<br>
 
-email: viek@outlook.com<br>
+email: vivek@outlook.com<br>
 password: 123456
 
 ## Database Configuration
