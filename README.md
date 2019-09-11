@@ -9,6 +9,9 @@ password: 123456
 ## Some users
 
 email: venkat@gmail.com<br>
+password: 123456<br>
+
+email: viek@outlook.com<br>
 password: 123456
 
 ## Database Configuration
@@ -40,7 +43,6 @@ Name: ecommerce
 │   │   └── signupconfirmation.php
 │   ├── index.php
 │   ├── infoproduct.php
-│   ├── later.php
 │   ├── logout.php
 │   ├── products.php
 │   ├── productstock.php
@@ -59,6 +61,7 @@ Name: ecommerce
 ├── deletecommand.php
 ├── deleteorder.php
 ├── details.php
+├── downloadorder.php
 ├── ecommerce.sql
 ├── editprofile.php
 ├── final.php
