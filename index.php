@@ -10,7 +10,6 @@ else {
     $idsess = $_SESSION['id'];
 }
 
-
 require 'includes/header.php';
 require $nav; ?>
 
@@ -197,36 +196,48 @@ require $nav; ?>
 
 <div class="container contact" id="contact">
     <div class="row">
-        <form class="col s12 animated slideInUp wow">
+        <form action="https://postmail.invotes.com/send" method="post" id="email_form" class="col s12 animated slideInUp wow">
             <h3 class="animated slideInUp wow">Contact Us</h3>
             <div class="row">
                 <div class="input-field col s12 m6">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Full Name</label>
+                    <input id="icon_prefix" name="subject" type="text" class="validate">
+                    <label for="icon_prefix">Subject</label>
                 </div>
                 <div class="input-field col s12 m6">
                     <i class="material-icons prefix">email</i>
-                    <input id="email" type="email" class="validate">
+                    <input id="email" name="reply_to" type="email" class="validate">
                     <label for="email" data-error="wrong" data-success="right">Email</label>
                 </div>
-
-
-
                 <div class="input-field col s12 ">
                     <i class="material-icons prefix">message</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea" type="text" name="message" rows="4"" style="resize: vertical;min-height: 8rem;" required></textarea>
+                    <textarea id="icon_prefix2" class="materialize-textarea" type="text" name="text" rows="4"" style="resize: vertical;min-height: 8rem;" required></textarea>
                     <label for="icon_prefix2">Your message</label>
                 </div>
-
+                <input type="hidden" name="access_token" value="6gty83bjcfi8h64bct4ha7on" />
+                <input type="hidden" name="success_url" value="." />
+                <input type="hidden" name="error_url" value=".?err=1" />
                 <div class="center-align">
-                    <button type="submit" name="contact" class="button-rounded btn-large waves-effect waves-light">Submit</button>
+                    <button id="submit_form" type="submit" name="contact" value="Send" class="button-rounded btn-large waves-effect waves-light">Submit</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
 
+
+
 <?php
 require 'includes/secondfooter.php';
 require 'includes/footer.php'; ?>
+<script>
+    var submitButton = document.getElementById("submit_form");
+    var form = document.getElementById("email_form");
+    form.addEventListener("submit", function (e) {
+        setTimeout(function() {
+            submitButton.value = "Sending...";
+            submitButton.disabled = true;
+        }, 1);
+    });
+</script>
+
