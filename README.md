@@ -8,13 +8,13 @@ password: 123456
 
 ## Some users
 
-email: venkat@gmail.com
+email: venkat@gmail.com<br>
 password: 123456
 
 ## Database Configuration
-Host: localhost
-User: root
-Password: MyNewPass
+Host: localhost<br>
+User: root<br>
+Password: MyNewPass<br>
 Name: ecommerce
 
 ## Credits
