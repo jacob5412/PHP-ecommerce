@@ -15,6 +15,7 @@ password: 123456
 Host: localhost<br>
 User: root<br>
 Password: MyNewPass<br>
-Name: ecommerce<br>
+Name: ecommerce
+
 
 The original project can be found on [SmartShop](https://github.com/smakosh/Smartshop).
