@@ -220,6 +220,7 @@ require $nav; ?>
                 <div class="center-align">
                     <button id="submit_form" type="submit" name="contact" value="Send" class="button-rounded btn-large waves-effect waves-light">Submit</button>
                 </div>
+                <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
             </div>
         </form>
     </div>
