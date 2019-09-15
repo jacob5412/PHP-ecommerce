@@ -98,7 +98,7 @@ $id_product =$_GET['id'];
             if (isset($_POST['buy'])) {
               // check error here
                if (!isset($_SESSION['logged_in'])) {
-                 echo "<meta http-equiv='refresh' content='0;url=http://localhost/~jacobjohn/ecommerce/sign' />";
+                 echo "<meta http-equiv='refresh' content='0;url=./sign' />";
                }
 
                else {

@@ -1,4 +1,3 @@
-
 <ul id="dropdown2" class="dropdown-content">
     <li><a class="blue-text" href="editprofile">Edit</a></li>
     <li><a class="blue-text" href="orders">Orders</a></li>

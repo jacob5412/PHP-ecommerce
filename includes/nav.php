@@ -12,7 +12,7 @@
 
             </ul>
 
-            <ul  class="right hide-on-med-and-down">
+            <ul class="right hide-on-med-and-down">
                 <li><a href="index" class="dark-text">Home</a></li>
                 <li><a href="sign" class="waves-effect waves-light btn button-rounded">Sign In</a></li>
                 <li><a href="cart" class="dark-text baskett"><i class="material-icons">shopping_cart</i>
