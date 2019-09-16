@@ -40,7 +40,7 @@ if (isset($_GET['id'])) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
             $pdf->Ln();
-            $pdf->Cell(60, 10, 'Invoice generated for '.$row['firstname'].' '.$row['lastname'], 1, 1, 'C');
+            $pdf->Cell(70, 10, 'Invoice generated for '.$row['firstname'].' '.$row['lastname'], 0, 1, 'C');
         }
     }
     $pdf->Output();
