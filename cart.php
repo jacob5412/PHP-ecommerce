@@ -47,7 +47,7 @@ require $nav;?>
           category.name as 'category', command.id_user, command.statut,
           command.quantity as 'quantity'
 FROM category, product, command
-WHERE command.id_product = product.id AND product.id_category = category.id AND command.statut = 'ordered'";
+WHERE command.id_product = product.id AND product.id_category = category.id AND command.statut = 'ordered' AND command.id_user = ".$_SESSION['id'];
         $result1 = $connection->query($queryproduct);
         if ($result1->num_rows > 0) {
             // output data of each row
