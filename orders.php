@@ -41,7 +41,7 @@ require $nav; ?>
         <?php
         include 'db.php';
         //get orders
-        $queryorder = "SELECT command.id as id, name, quantity, dat, statut FROM command, product WHERE product.id = command.id_product and id_user=".$_SESSION['id'];
+        $queryorder = "SELECT command.id as id, name, quantity, dat, statut FROM command, product WHERE product.id = command.id_product and command.statut='paid' and id_user=".$_SESSION['id'];
         $resultorder = $connection->query($queryorder);
         if ($resultorder->num_rows > 0) {
             // output data of each row

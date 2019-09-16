@@ -33,7 +33,7 @@ if (isset($_GET['id'])) {
         'color1'=>array(255,255,255),
         'color2'=>array(224,224,224),
         'padding'=>2);
-    $pdf->Table($link,'SELECT name, quantity, dat, statut FROM command, product WHERE product.id = command.id_product and id_user='.$id, $prop);
+    $pdf->Table($link,'SELECT name, quantity, dat, statut FROM command, product WHERE product.id = command.id_product and command.statut="paid" and id_user='.$id, $prop);
     $queryuname = "SELECT firstname, lastname FROM users WHERE id = '$id'";
     $result = $connection->query($queryuname);
     if ($result->num_rows > 0) {
