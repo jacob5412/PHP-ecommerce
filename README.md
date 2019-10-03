@@ -1,6 +1,9 @@
 # PHP-ecommerce
 An e-commerce php/mysql website built from scratch to get started with as a starter template.
 
+## Homepage
+![GUI](https://github.com/jacobjohn2016/PHP-ecommerce/raw/master/home.png)
+
 ## Site functions
 * Search for products (using autocomplete)
 * Displays an array of popular selling products on the front page
