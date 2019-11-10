@@ -1,4 +1,4 @@
-# PHP-ecommerce
+# An ecommerce website using PHP
 An e-commerce php/mysql website built from scratch to get started with as a starter template.
 
 ## Homepage
