@@ -4,6 +4,10 @@ An e-commerce php/mysql website built from scratch to get started with as a star
 ## Homepage
 ![GUI](https://github.com/jacobjohn2016/PHP-ecommerce/raw/master/home.png)
 
+## Documentation
+* [Report](blob/master/Report.pdf)
+* [Presentation](blob/master/project_presentation.pdf)
+
 ## Site functions
 * Search for products (using autocomplete)
 * Displays an array of popular selling products on the front page
