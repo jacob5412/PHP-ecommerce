@@ -6,7 +6,7 @@ An e-commerce php/mysql website built from scratch to get started with as a star
 
 ## Documentation
 * [Report](./Report.pdf)
-* [Presentation](./project_presentation.pdf)
+* [Presentation](./project_presentation.pptx)
 
 ## Site functions
 * Search for products (using autocomplete)
