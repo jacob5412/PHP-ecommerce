@@ -1,5 +1,5 @@
 # An ecommerce website using PHP
-An e-commerce php/mysql website built from scratch to get started with as a starter template.
+An e-commerce php and mysql website built from scratch to get started with as a starter template.
 
 ## Homepage
 ![GUI](https://github.com/jacobjohn2016/PHP-ecommerce/raw/master/home.png)
