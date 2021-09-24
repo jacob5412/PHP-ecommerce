@@ -27,19 +27,6 @@ An e-commerce php and mysql website built from scratch to get started with as a 
 * Generating invoice of all items and printing them in pdf form
 * Purchasing items and delivering them to a specific address
 
-## Super admin
-
-email: kapsjacob@gmail.com<br>
-password: 123456
-
-## Some users
-
-email: venkat@gmail.com<br>
-password: 123456<br>
-
-email: vivek@outlook.com<br>
-password: 123456
-
 ## Database Configuration
 
 Host: localhost<br>
