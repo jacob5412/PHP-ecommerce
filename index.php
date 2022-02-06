@@ -3,10 +3,9 @@
 session_start();
 
 if (!isset($_SESSION['logged_in'])) {
-    $nav ='includes/nav.php';
-}
-else {
-    $nav ='includes/navconnected.php';
+    $nav = 'includes/nav.php';
+} else {
+    $nav = 'includes/navconnected.php';
     $idsess = $_SESSION['id'];
 }
 
@@ -20,6 +19,7 @@ require $nav; ?>
         display: block;
 
     }
+
     .autocomplete-items {
         color: #26a69a;
         font: 16px Roboto, sans-serif;
@@ -33,6 +33,7 @@ require $nav; ?>
         left: 0;
         right: 0;
     }
+
     .autocomplete-items div {
         padding-bottom: 20px;
         padding-top: 20px;
@@ -40,11 +41,13 @@ require $nav; ?>
         cursor: pointer;
         background-color: #fff;
     }
+
     .autocomplete-items div:hover {
         /*when hovering an item:*/
         color: #26a69a;
         background-color: #e9e9e9;
     }
+
     .autocomplete-active {
         /*when navigating through the items using the arrow keys:*/
         background-color: DodgerBlue !important;
@@ -95,7 +98,7 @@ require $nav; ?>
         $resultfirst = $connection->query($queryfirst);
         if ($resultfirst->num_rows > 0) {
             // output data of each row
-            while($rowfirst = $resultfirst->fetch_assoc()) {
+            while ($rowfirst = $resultfirst->fetch_assoc()) {
 
                 $id_best = $rowfirst['id'];
                 $name_best = $rowfirst['name'];
@@ -103,7 +106,7 @@ require $nav; ?>
                 $thumbnail_best = $rowfirst['thumbnail'];
                 $totalsold = $rowfirst['total'];
 
-                ?>
+        ?>
 
                 <div class="col s12 m4">
                     <div class="card hoverable animated slideInUp wow">
@@ -128,7 +131,8 @@ require $nav; ?>
 
                     </div>
                 </div>
-            <?php }} ?>
+        <?php }
+        } ?>
 
 
     </div>
@@ -145,12 +149,12 @@ require $nav; ?>
             $total = $connection->query($querycategory);
             if ($total->num_rows > 0) {
                 // output data of each row
-                while($rowcategory = $total->fetch_assoc()) {
+                while ($rowcategory = $total->fetch_assoc()) {
                     $id_category = $rowcategory['id'];
                     $name_category = $rowcategory['name'];
                     $icon_category = $rowcategory['icon'];
 
-                    ?>
+            ?>
 
                     <div class="col s12 m4">
                         <div class="card hoverable animated slideInUp wow">
@@ -161,7 +165,8 @@ require $nav; ?>
                         </div>
                     </div>
 
-                <?php }} ?>
+            <?php }
+            } ?>
         </div>
     </div>
 </div>
@@ -187,7 +192,7 @@ require $nav; ?>
                     their items. We are also going to implement an authentication system, to differentiate between
                     regular and logged in customers, by making use of MySQL database. The users are handled using
                     PHP sessions to allow them to make changes to the cart. These changes are stored as session variables
-                    so that the user can come back and restore his previous session.  </p>
+                    so that the user can come back and restore his previous session. </p>
             </div>
 
         </div>
@@ -211,10 +216,11 @@ require $nav; ?>
                 </div>
                 <div class="input-field col s12 ">
                     <i class="material-icons prefix">message</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea" type="text" name="text" rows="4"" style="resize: vertical;min-height: 8rem;" required></textarea>
+                    <textarea id="icon_prefix2" class="materialize-textarea" type="text" name="text" rows="4"" style=" resize: vertical;min-height: 8rem;" required></textarea>
                     <label for="icon_prefix2">Your message</label>
                 </div>
-                <input type="hidden" name="access_token" value="6gty83bjcfi8h64bct4ha7on" />
+                <!-- Go to https://postmail.invotes.com/ to get an access token -->
+                <input type="hidden" name="access_token" value="" />
                 <input type="hidden" name="success_url" value="." />
                 <input type="hidden" name="error_url" value=".?err=1" />
                 <div class="center-align">
@@ -234,11 +240,10 @@ require 'includes/footer.php'; ?>
 <script>
     var submitButton = document.getElementById("submit_form");
     var form = document.getElementById("email_form");
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", function(e) {
         setTimeout(function() {
             submitButton.value = "Sending...";
             submitButton.disabled = true;
         }, 1);
     });
 </script>
-
